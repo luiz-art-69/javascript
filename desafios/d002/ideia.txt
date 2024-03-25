@@ -1,0 +1,17 @@
+Entrada do Ano de Nascimento: 
+Comece criando um formulário HTML onde o usuário possa inserir o ano de nascimento. Isso pode ser feito com um elemento <input type="number">.
+
+Calcular a Idade:
+ Use JavaScript para calcular a idade com base no ano de nascimento fornecido pelo usuário e no ano atual.
+
+Seleção de Sexo:
+ Após o usuário inserir o ano de nascimento, forneça duas opções de seleção de sexo: masculino e feminino. Isso pode ser feito com elementos <input type="radio">.
+
+Exibição da Idade e do Sexo:
+ Depois que o usuário selecionar o sexo, exiba a idade e o sexo escolhido na página. Você pode fazer isso manipulando o DOM com JavaScript para atualizar o conteúdo de um elemento HTML.
+
+Exibição de Imagem:
+ Dependendo do sexo e da faixa etária (criança, jovem, adulto, idoso), você pode exibir uma imagem correspondente. Isso pode ser feito alterando o atributo src de um elemento <img> com base nas escolhas do usuário.
+
+Estilização:
+ Use CSS para estilizar a página e os elementos, como as opções de seleção de sexo e a exibição da imagem. Você pode criar classes CSS para aplicar estilos específicos a cada elemento.
