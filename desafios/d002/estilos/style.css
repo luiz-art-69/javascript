@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+/* Estilos para o corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para o cabeçalho */
+header {
+    background-color: #FFD400;
+    color: #000;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.103);
+}
+
+/* Estilos para a seção principal */
+section {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.116);
+    margin: 20px auto;
+    max-width: 400px; /* ajuste a largura conforme necessário */
+    padding: 20px;
+}
+
+/* Estilos para os campos de entrada e rótulos */
+div {
+    margin-bottom: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="number"],input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Estilos para o botão */
+button {
+    background-color:#FF1D67;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 16px;
+    margin: 20px auto;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #dd1b5b;
+}
+
+/* Estilos para a mensagem */
+#msg {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Estilos para a imagem */
+#imagem {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%; /* garantir que a imagem não ultrapasse a largura da seção */
+    border-radius: 50%;
+}
