@@ -3,9 +3,7 @@ while (c <= 6){
     console.log(`Passo ${c}`)
     c += 1
 }*/
-var i = 1
-var n = 10
-do {
-    i += 1
-    console.log(`${i}`)
-} while (i <= n)
+while (n < 3) {
+    n++;
+    x += n;
+  }
