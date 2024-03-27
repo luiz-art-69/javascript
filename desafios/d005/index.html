@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisador de números</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Analisador de números</h1>
+    </header>
+    <section>
+        <div id="inputnum">
+            <label for="num">Número (entre 1 a 100): </label>
+            <input type="number" id="num">
+            <input type="button" value="adicionar" onclick="adicionar()">
+        </div>
+        <div>
+            <select id="selnum" size="6">
+            </select>
+        </div>
+        <input type="button" value="finalisar" onclick="finalisar()">
+        <p id="res"></p>
+    </section>
+    <footer>
+        <p><a href="">@ CursoEmVideo</a></p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
