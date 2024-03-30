@@ -19,7 +19,7 @@ section{
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.226);
     max-width: 450px;
     margin: 20px auto;
-    padding: 30px;
+    padding: 20px;
     border-radius: 10px;
 }
 
@@ -27,11 +27,15 @@ div {
     margin-bottom: 10px;
 }
 
+p {
+    margin: 10px;
+}
+
 label {
     font-weight: bolder;
 }
 
-select#selnum {
+select#numerosSelecionados{
     width: 200px;
 }
 

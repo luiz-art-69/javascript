@@ -7,12 +7,27 @@
 </head>
 <body>
     <script>
-        var array = [1, 7, 10, 54, 98]
-        var soma = 0 
-        for(var i = 0; i < array.length; i++){
-            soma += array[i]
+        var numeroInicial = parseFloat(prompt('Informe o primeiro número: '))
+        var sinal = prompt('Informe o sinal da sua operação: ')
+        
+        while(sinal != '+' && sinal != '-' && sinal != '*' && sinal != '/'){
+            alert('[ERRO] Digite um Sinal valido!')
+            sinal = prompt('Informe o sinal da sua operação: ')
         }
-        console.log("A soma dos números é:", soma)
+        
+        var numeroFinal = parseFloat(prompt('Informe o segundo número: '))
+
+        if (sinal == '+'){
+            var operacao = numeroInicial + numeroFinal
+        }else if (sinal == '-'){
+            var operacao = numeroInicial - numeroFinal
+        }else if (sinal == 'x'){
+            var operacao = numeroInicial * numeroFinal
+        }else if (sinal == '/'){
+            var operacao = numeroInicial / numeroFinal
+        }
+
+        alert('O resultado da operação é: '+ operacao)
     </script>
 </body>
 </html>

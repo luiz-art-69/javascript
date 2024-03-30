@@ -1,25 +1,68 @@
-var lista = document.getElementById('selnum');
-var res = document.getElementById('res');
-var valores = [];
+var numeros = [];
+var mensagem = document.getElementById('mensagem')
 
-function adicionar() {
-    var num = parseInt(document.getElementById('num').value);
-    
-    if (num <= 0 || num > 100 || num == "") {
-        alert('Digite um número entre 1 e 100!');
+function adicionarNumero() {
+    var numeroInput = document.getElementById('numero');
+    var numero = parseInt(numeroInput.value);
+
+    if (isNaN(numero) || numero < 1 || numero > 100) {
+        alert('Digite um número válido entre 1 e 100!');
         return;
     }
 
-    var options = document.getElementById('selnum').options;
-    for (var i = 0; i < options.length; i++){
-        if (parseInt(options[i].value) === num){
-            alert('Esse número já foi adicionado!')
-            return;
-        }
+    if (numeros.includes(numero)) {
+        alert('Este número já foi adicionado!');
+        return;
+    }
+
+    var select = document.getElementById('numerosSelecionados');
+    var option = document.createElement('option');
+    option.value = numero;
+    option.text = `Valor ${numero} adicionado`;
+    select.appendChild(option);
+    mensagem.innerHTML = ''
+
+    numeroInput.value = ''
+    numeroInput.focus()
+
+    numeros.push(numero);
+}
+
+
+function finalizar(){
+    if (numeros.length === 0){
+        alert(`Nenhum número adicionado!`)
+        return
     }
     
-    var novoOption = document.createElement("option");
-    novoOption.value = num;
-    novoOption.text = `O valor ${num} foi adicionado.`;
-    lista.appendChild(novoOption);
+    var menorValor = numeros[0]
+    var maiorValor = numeros[0]
+    var soma = 0
+
+    for (var i = 0; i < numeros.length; i++){
+        soma += numeros[i]
+        
+        if (numeros[i] > maiorValor){
+            maiorValor = numeros[i]
+        }
+    
+        if (numeros[i] < menorValor){
+            menorValor = numeros[i]
+        }
+    }
+
+    var media = soma / numeros.length
+
+    mensagem.innerHTML += `<p>Ao todo, temos <strong>${numeros.length}</strong> números cadastrados.</p>`;
+    mensagem.innerHTML += `<p>O maior valor informado foi <strong>${maiorValor}</strong>.</p>`;
+    mensagem.innerHTML += `<p>O menor valor informado foi <strong>${menorValor}</strong>.</p>`;
+    mensagem.innerHTML += `<p>Somando todos os valores, temos <strong>${soma}</strong>.</p>`;
+    mensagem.innerHTML += `<p>A média dos valores digitados é <strong>${media}</strong>.</p>`;
+}
+
+function limpar(){
+    mensagem.innerHTML = ''
+    document.querySelector('select#numerosSelecionados').innerHTML = ''
+    numeros.innerHTML = ''
+    numeroInput = ''
 }
