@@ -8,26 +8,27 @@
         body {
             height: 100vh;
         }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        .animBox{
+            transition: 1s;
+            margin-left: 120px;
+            background-color: lightcoral;
+        }
     </style>
 </head>
 <body>
     <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
     <script>
-            var elementos = document.getElementsByClassName('box')
-            
-
-            for (var i = 0; i < elementos.length; i++){
-                var Box1 = elementos[i]
-                Box1.style.backgroundColor = 'red';
-                Box1.style.margin = '5px auto';
-                Box1.style.width = '100px'
-                Box1.style.height = '100px'
-            }
+        var box = document.querySelectorAll('.box')[0]
+        box.addEventListener('click', ()=>{
+            box.classList.add('animBox')
+        })
     </script>
 </body>
 </html>
