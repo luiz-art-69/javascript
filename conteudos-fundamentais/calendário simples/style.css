@@ -1,0 +1,17 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+.calendar__select {
+    padding: 10px;
+}
+
+.calendar__title {
+    margin: 10px;
+}
+
+.calendar__days {
+    display: inline;
+}

@@ -3,32 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        body {
-            height: 100vh;
-        }
-
-        .box {
-            width: 200px;
-            height: 200px;
-            background-color: red;
-        }
-
-        .animBox{
-            transition: 1s;
-            margin-left: 120px;
-            background-color: lightcoral;
-        }
-    </style>
+    <title>Lista de Tarefas</title>
 </head>
 <body>
-    <div class="box"></div>
-    <script>
-        var box = document.querySelectorAll('.box')[0]
-        box.addEventListener('click', ()=>{
-            box.classList.add('animBox')
-        })
-    </script>
+    <h1>Lista de Tarefas</h1>
+    
+    <form id="formulario-tarefa">
+        <input type="text" id="descricao" placeholder="Descrição da Tarefa" required>
+        <button type="submit">Adicionar Tarefa</button>
+    </form>
+
+    <ul id="lista-tarefas">
+        <!-- Aqui serão exibidas as tarefas -->
+    </ul>
+
+    <script src="script.js"></script>
 </body>
 </html>
