@@ -1,17 +1,44 @@
-* {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0px;
-    padding: 0px;
+#calendario {
+    max-width: 400px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
 }
 
-.calendar__select {
-    padding: 10px;
+#calendario .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
-.calendar__title {
-    margin: 10px;
+#calendario .header button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
 }
 
-.calendar__days {
-    display: inline;
+#calendario table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#calendario th, #calendario td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#calendario th {
+    background-color: #3498db;
+    color: #fff;
+}
+
+#calendario td {
+    cursor: pointer;
+}
+
+#calendario td:hover {
+    background-color: #f2f2f2;
 }
