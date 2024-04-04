@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Teste do Triangulo
+        // var a = 2
+        // var b = 2
+        // var c = 5
+        // var tri = a < b + c && b < a + c && c < a + b
+        // var eq = a == b && b == c
+        // var es = a != b && b != c && a != c
+        // console.log("Pode ser um triangulo?", tri)
+        // console.log("O triangulo é Equilatero?", eq)
+        // console.log("O triangulo é Escaleno?", es)
+
+        // Soma dos Números Pares:
+        // var somaPares = 0
+        // for (var i = 0; i <= 100; i++) {
+        //     if (i % 2 === 0){
+        //        somaPares += i
+        //     }
+        // }
+        // console.log(`A soma dos números pares de 1 a 100 é ${somaPares}`)
+
+        // Fatorial
+        // var n1 = 5
+        // var soma = 1
+        // for(var i = 1; i <= n1; i++){
+        //     soma *= i
+        // }
+        // console.log(soma)
+
+        // Verificar Palíndromo
+        // function inverterString(str) {
+        //     var invert = str.split('').reverse().join('');
+        //     if (str === invert){
+        //         return 'A palavra é um palíndromo!';
+        //     } else {
+        //         return 'A palavra não é um palíndromo!';
+        //     }
+        // }
+
+        // // Exemplo de uso da função
+        // var minhaString = "tadar";
+        // console.log(inverterString(minhaString));
+
+        // Maior e Menor Número
+
+        function encontrarMaiorMenor(lista) {
+                var maior = 0;
+                var menor = 0;
+
+                for (var i = 0; i < lista.length; i++) {
+                    if (lista[i] > maior) {
+                        maior = lista[i];
+                    }
+                    if (lista[i] < menor) {
+                        menor = lista[i];
+                    }
+                }
+
+                return { maior: maior, menor: menor };
+            }
+
+            // Exemplo de uso da função
+            var listaDeNumeros = [10, 5, 8, 3, 12, 20];
+            var resultado = encontrarMaiorMenor(listaDeNumeros);
+            console.log("O maior número é:", resultado.maior);
+            console.log("O menor número é:", resultado.menor);
+
+         </script>
