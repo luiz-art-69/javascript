@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Contagem Inteligente
+        function contagemInteligente(inicio, fim) {
+            if (inicio > fim) {
+                console.log(`Contagem regressiva de ${inicio} até ${fim}:`);
+                for (let i = inicio; i >= fim; i--) {
+                    console.log(i)
+                }
+            } else if (inicio < fim) {
+                console.log(`Contagem progressiva de ${inicio} até ${fim}:`);
+                for (let i = inicio; i <= fim; i++){
+                    console.log(i)
+                }
+            } else {
+                console.log("Os valores de inicio e fim são iguais!")
+            }
+        }
+
+        var inicio = parseInt(prompt("Inicio:"))
+        var fim = parseInt(prompt("Fim:"))
+        contagemInteligente(inicio, fim);
+    </script>
+</body>
+</html>

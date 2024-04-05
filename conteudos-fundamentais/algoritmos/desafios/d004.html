@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Melhor aluno da turma
+        function calcMelhorNota() {
+            var numeroAlunos = parseInt(prompt("Quantos alunos existem?"))
+            var alunos = []
+
+            for (let i = 0; i < numeroAlunos; i++){
+                var nome = prompt("Nome do aluno:")
+                var nota = parseFloat(prompt(`Nota de ${nome}:`))
+                alunos.push({nome: nome, nota: nota})
+            }
+
+            var melhorNota = 0
+            var melhorAluno = ""
+
+            for (let i = 0; i < alunos.length; i++){
+                if (alunos[i].nota > melhorNota){
+                    melhorNota = alunos[i].nota
+                    melhorAluno = alunos[i].nome
+                }
+            }
+            console.log(`O aluno com a melhor nota é: ${melhorAluno} Com a nota de: ${melhorNota}`)
+        }
+        calcMelhorNota()
+    </script>
+</body>
+</html>

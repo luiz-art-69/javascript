@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Reprovado ou Aprovado
+        var nota1 = parseFloat(prompt("Qual a primeira nota?"))
+        var nota2 = parseFloat(prompt("qual a segunda nota?"))
+        var media = (nota1 + nota2) / 2
+        if (media >= 9 || media == 10){
+            console.log(`MEDIA: ${media.toFixed(1)}`)
+            console.log("APROVEITAMENTO: A")
+        } else if(media >= 7 || media == 8){
+            console.log(`MEDIA: ${media.toFixed(1)}`)
+            console.log("APROVEITAMENTO: B") 
+        } else if(media >= 5 || media == 6){
+            console.log(`MEDIA: ${media.toFixed(1)}`)
+            console.log("APROVEITAMENTO: C")
+        }else if(media >= 3 || media == 4){
+            console.log(`MEDIA: ${media.toFixed(1)}`)
+            console.log("APROVEITAMENTO: D")
+        } else if(media >= 1 || media == 2){
+            console.log(`MEDIA: ${media.toFixed(1)}`)
+            console.log("APROVEITAMENTO: E")
+        } else {
+            console.log(`MEDIA: ${media.toFixed(1)}`)
+            console.log("F - Reprovado")
+        }
+    </script>
+</body>
+</html>

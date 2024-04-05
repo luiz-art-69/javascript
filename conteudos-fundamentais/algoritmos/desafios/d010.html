@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Super Contador
+        console.log("---- MENU ----")
+        console.log("[1] De 1 a 10")
+        console.log("[2] De 10 a 1")
+        console.log("[3] Terminar")
+
+        var input = parseInt(prompt())
+
+        function contar(params) {
+            if (input == 1) {
+                for (let i = 1; i <= 10; i++) {
+                    console.log(i)
+                }
+            } else if (input == 2) {
+                for (let i = 10; i >= 1 ; i--) {
+                    console.log(i)
+                }
+            }else if (input == 3) {
+                console.log("Fim do progama...")
+            }
+
+        }
+        contar()
+    </script>
+</body>
+</html>
