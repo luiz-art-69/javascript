@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Definição da função criarPessoa()
+        function criarPessoa() {
+            var sexo = prompt("Qual é o sexo da pessoa? [M/F]");
+            var idade = parseInt(prompt("Qual é a idade da pessoa?"));
+            var corCabelo = parseInt(prompt("Qual é a cor do cabelo? [1] Preto - [2] Castanho - [3] Loiro - [4]  Ruivo"));
+
+            if (sexo == "M") {
+                sexo = "Masculino"
+            } else if (sexo == "F") {
+                sexo = "Feminino"
+            }
+
+            if (corCabelo == 1) {
+                corCabelo = 'Preto'
+            } else if (corCabelo == 2) {
+                corCabelo = 'Castanho'
+            } else if (corCabelo == 3) {
+                corCabelo = "Loiro"
+            } else if (corCabelo == 4) {
+                corCabelo == "Ruivo"
+            }
+
+            return {
+                sexo: sexo,
+                idade: idade,
+                corCabelo: corCabelo
+            };
+        }
+
+        var pessoas = [];
+
+        do {
+            var pessoa = criarPessoa();
+
+            pessoas.push(pessoa);
+
+            var continuar = prompt("Quer continuar? [S/N]");
+        } while (continuar.toUpperCase() === "S");
+        if (continuar.toUpperCase() === "N") {
+            resultadoFinal()
+        }
+
+        function resultadoFinal() {
+            var resultadoM = 0
+            var resultadoF = 0
+            for (var i = 0; i < pessoas.length; i++) {
+                if (pessoas[i].sexo == "Masculino" && pessoas[i].idade >= 18 && pessoas[i].corCabelo == "Castanho") {
+                    resultadoM++
+                } else if (pessoas[i].sexo == "Feminino" && pessoas[i].idade >= 25 && pessoas[i].idade <= 30 && pessoas[i].corCabelo == "Loiro") {
+                    resultadoF++
+                }
+
+            }
+
+            console.log("Total de homens com mais de 18 e cabelos castanho", resultadoM)
+            console.log("Total de mulheres entre 25 e 30 e cabelos loiros", resultadoF)
+        }
+    </script>
+</body>
+
+</html>
