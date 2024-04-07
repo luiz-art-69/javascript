@@ -9,5 +9,84 @@
 
 <body>
     <script>
-        
+        // var total = 0
+        // var somaImpares = 0
+
+        // function calc() {
+        //     for (var i = 0; i < 3; i++) {
+        //         var n1 = parseInt(prompt("Digite um número:"))
+        //         if (n1 >= 0 && n1 <= 10) {
+        //             total = total += 1
+        //         }
+        //         if (n1 % 2 == 1) {
+        //             somaImpares += n1
+        //         }
+        //     }
+        // }
+
+        // calc()
+        // console.log(`Ao todo Foram ${total} valores entre  0 e 10.`)
+        // console.log(`Nesse intervalo, a soma de impares foi ${somaImpares}.`)
+
+        // Fibonacci
+        // var n1 = 0
+        // var n2 = 1
+        // console.log(n1, n2)
+        // for (var i = 3; i <= 15; i++){
+        //     var temp = n1 + n2
+        //     n1 =  n2
+        //     n2 = temp
+        //     console.log(n1, n2)
+        // }
+
+        // Analisador de Valores
+        // var soma = 0
+        // var divPorCinco = 0
+        // var nulos = 0
+        // var somaPares = 0
+
+        // function analisadorDeValores() {
+        //     for (var i = 1; i <= 5; i++) {
+        //         var n1 = parseInt(prompt(`Digite o ${i}o. Valor:`))
+        //        soma += n1
+        //         if (n1 % 5 == 0) {
+        //             divPorCinco++
+        //         }
+        //         if (n1 == 0) {
+        //             nulos++
+        //         }
+        //         if (n1 % 2 == 0) {
+        //             somaPares += n1
+        //         }
+        //     }
+        // }
+
+        // analisadorDeValores()
+
+        // var media = soma / 5
+        // console.log(`A soma entre os valores e ${soma}`)
+        // console.log(`A media entre os valores e ${media}`)
+        // console.log(`Valores divisiveis por cinco: ${divPorCinco}`)
+        // console.log(`Valores nulos ${nulos}`)
+        // console.log(`A soma dos valores pares é: ${somaPares}`)
+        var somaPares = 0
+        var meuVetor = []
+
+        for (let i = 1; i <= 5; i++) {
+            var n1 = parseInt(prompt(`Digite o ${i}o. Valor:`))
+            meuVetor.push(n1)
+        }
+
+        function pares(n) {
+            for (var i = 0; i < n.length; i++){
+                if (n[i] % 2 == 0) {
+                   somaPares++
+                   console.log(`Valor PAR na posição ${i}`)
+                }
+            }
+
+            return somaPares
+        }
+
+        console.log(`Total de pares foi: ${pares(meuVetor)}` )
     </script>
