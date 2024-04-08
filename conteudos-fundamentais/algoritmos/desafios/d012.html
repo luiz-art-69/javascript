@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torneio de futebol</title>
+</head>
+
+<body>
+    <script>
+        function gerarCombinacoesSemRepeticoes(variaveis, k) {
+            let resultado = [];
+
+            function backtrack(temp, start) {
+                if (temp.length === k) {
+                    resultado.push([...temp]);
+                    return;
+                }
+
+                for (let i = start; i < variaveis.length; i++) {
+                    // Evite repetir variáveis na combinação
+                    if (!temp.includes(variaveis[i])) {
+                        temp.push(variaveis[i]);
+                        backtrack(temp, i + 1);
+                        temp.pop();
+                    }
+                }
+            }
+
+            backtrack([], 0);
+            return resultado;
+        }
+
+        let variaveis = ['a', 'b', 'c', 'd', 'e'];
+        let k = 3;
+
+        let combinacoes = gerarCombinacoesSemRepeticoes(variaveis, k);
+        console.log(combinacoes);
+
+    </script>
+</body>
+
+</html>
