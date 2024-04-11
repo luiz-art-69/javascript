@@ -9,5 +9,65 @@
 
 <body>
     <script>
-        
+        // var matriz = []
+        // var linha = parseInt(prompt("Digite a quantidade de linha:"))
+        // var coluna = parseInt(prompt("Digite a quantidade de colunas:"))
+
+        // for (let i = 0; i < linha; i++) {
+        //     var linhaAtual = []
+        //     for (let j = 0; j < coluna; j++) {
+        //         var valor = parseInt(prompt(`Digite um valor na posição [${[i]}, ${[j]}]:`))
+        //         linhaAtual.push(valor)
+        //     }
+        //     matriz.push(linhaAtual)
+        // }
+
+        // var totalPares = 0
+        // for (let i = 0; i < linha; i++) {
+        //     for (let j = 0; j < coluna; j++) {
+        //         if (matriz[i][j] % 2 === 0) {
+        //             totalPares++
+        //             console.log(`[${matriz[i][j]}]`)
+        //         } else {
+        //             console.log(`${matriz[i][j]}`)
+        //         }
+        //     }
+        // }
+
+        // console.log("Quantidade de números pares na matriz:", totalPares);
+
+        var matriz = []
+        var sDP = 0
+        var p2L = 1
+        var m3C = 0
+
+        for (var l = 0; l < 4; l++) {
+            var linha = []
+            for (var c = 0; c < 4; c++) {
+                var valor = parseInt(prompt("Digite um valor para a posição [" + l + "][" + c + "]:"));
+                linha.push(valor);
+                if (l === c) {
+                    sDP += linha[c]
+                }
+
+            }
+            matriz.push(linha)
+
+        }
+
+        for (let i = 0; i < 4; i++) {
+                p2L *= matriz[1][i]
+        }
+
+        for (var j = 0; j < 4; j++){
+            if (matriz[j][2] > m3C) {
+                m3C = matriz[j][2]
+            }
+        }
+
+        console.log(matriz)
+        console.log(`A soma da Diagonal Principal é: ${sDP}`)
+        console.log(`O produto entre os valores da segunda linha é: ${p2L}`)
+        console.log(`O maior valor da terceira coluna é: ${m3C}`)
     </script>
+</body>
