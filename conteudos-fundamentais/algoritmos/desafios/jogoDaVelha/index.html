@@ -7,11 +7,15 @@
     <title>Jogo da Velha</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <div id="board x">
-        <div class="cell x" data-cell></div>
-        <div class="cell circle" data-cell></div>
+    <!-- <div class="game-painel">
+        <div class="jogador" id="jogador 1">X</div>
+        <div class="jogador" id="jogador 2">O</div>
+        <p>gergergerg</p>
+    </div> -->
+    <div class="board" data-board>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
         <div class="cell" data-cell></div>
         <div class="cell" data-cell></div>
         <div class="cell" data-cell></div>
@@ -20,9 +24,9 @@
         <div class="cell" data-cell></div>
         <div class="cell" data-cell></div>
     </div>
-    <div class="winning-message">
-        <p>X venceu</p>
-        <button>Reniciar</button>
+    <div class="winning-message" data-winner-Msg>
+        <p class="winner-Msg__text" data-winning-Msg-text>X venceu!</p>
+        <button class="winner-Msg__button" data-restart-button>Reniciar</button>
     </div>
     <script src="script.js"></script>
 </body>

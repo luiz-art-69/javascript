@@ -1,40 +1,102 @@
-// Variável para armazenar o jogador atual (inicia com X)
-var jogadorAtual = 'X';
-var tabuleiro = [
-    ['', '', ''],
-    ['', '', ''],
-    ['', '', '']
-];
+const cellElements = document.querySelectorAll("[data-cell]")
+const board = document.querySelector('[data-board]')
+const winnerMsgTextElement = document.querySelector("[data-winning-Msg-text]")
+const winnerMsg = document.querySelector('[data-winner-Msg]')
+const restartButton = document.querySelector('[data-restart-button]')
 
-// Função para alternar entre jogadores
-function alternarJogador() {
-    jogadorAtual = jogadorAtual === 'X' ? 'O' : 'X';
-}
+let isCircleTurn;
 
-// Função para verificar se há um vencedor
-function verificarVencedor() {
-    // Lógica para verificar linhas, colunas e diagonais para determinar se há um vencedor
-}
+const winnerCombinations = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
+]
 
-// Função para verificar se o jogo é um empate
-function verificarEmpate() {
-    // Verificar se todas as células do tabuleiro estão preenchidas
-}
+const startGame = () => {
+    isCircleTurn = false
 
-// Função para reiniciar o jogo
-function reiniciarJogo() {
-    // Limpar o tabuleiro
-    // Resetar as variáveis necessárias
-}
-
-// Função chamada quando uma célula é clicada
-function clicarCelula(linha, coluna) {
-    if (tabuleiro[linha][coluna] === '' && !jogoTerminado) {
-        // Marcar a célula com o símbolo do jogador atual
-        tabuleiro[linha][coluna] = jogadorAtual;
-        var celula = document.getElementById("game__play").rows[linha].cells[coluna]
-        celula.textContent = jogadorAtual
+    for (const cell of cellElements) {
+        cell.classList.remove('x')
+        cell.classList.remove('circle')
+        cell.removeEventListener('click', handleClick)
+        cell.addEventListener('click', handleClick, { once: true })
     }
-    alternarJogador()
+
+    setBoardHoverClass()
+    winnerMsg.classList.remove('show-winning-Msg')
 }
 
+const endGame = (isDraw) => {
+    if (isDraw) {
+        winnerMsgTextElement.innerText = 'Empate!'
+    } else {
+        winnerMsgTextElement.innerText = isCircleTurn ? 'O Venceu!' : 'X Venceu!'
+    }
+
+    winnerMsg.classList.add("show-winning-Msg")
+}
+
+const checkForWin = (currentPlayer) => {
+    return winnerCombinations.some((combination) => {
+        return combination.every((index) => {
+            return cellElements[index].classList.contains(currentPlayer)
+        })
+    })
+}
+
+const checkForDraw = () => {
+    return [...cellElements].every(cell => {
+       return cell.classList.contains('x') || cell.classList.contains('circle')
+    })
+}
+
+const placeMark = (cell, classToAdd) => {
+    cell.classList.add(classToAdd)
+}
+
+const setBoardHoverClass = () => {
+    board.classList.remove('x')
+    board.classList.remove('circle')
+
+    if (isCircleTurn) {
+        board.classList.add('circle')
+    } else {
+        board.classList.add('x')
+    }
+}
+
+const swapTurns = () => {
+    isCircleTurn = !isCircleTurn
+    setBoardHoverClass()
+}
+
+const handleClick = (e) => {
+    // Colocar a marca (X ou Circulo)
+    const cell = e.target;
+    const classToAdd = isCircleTurn ? 'circle' : 'x';
+
+    placeMark(cell, classToAdd)
+
+    // Verificar por Vitoria
+    const isWin = checkForWin(classToAdd)
+
+    // Verificar por Empate
+    const isDraw = checkForDraw()
+    if (isWin) {
+        endGame(false)
+    } else if (isDraw) {
+        endGame(true)
+    } else {
+        // Mudar o Simbolo
+        swapTurns()
+    }
+
+}
+
+startGame()
+restartButton.addEventListener('click', startGame)
